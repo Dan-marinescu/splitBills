@@ -31,7 +31,7 @@ class Main extends React.Component {
         // check if the component is already loading data before making the API call
         if (!this.state.loading) {
             this.setState({ loading: true }); // set the loading flag to true
-            axios.get('http://localhost:8000/data')
+            axios.get('https://split-bill-server.onrender.com/data')
                 .then(response => {
                     let data = response.data;
                     console.log(data)

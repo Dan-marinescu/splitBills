@@ -92,7 +92,7 @@ class Table extends React.Component {
       let dataToSend = this.state.tempData
       console.log(dataToSend)
 
-      axios.post('http://localhost:8000/update', { dataToSend }).then(response => {
+      axios.post('https://split-bill-server.onrender.com/update', { dataToSend }).then(response => {
         // let data = response.data;
       }).catch(err => {
         console.log(err);
@@ -111,8 +111,8 @@ class Table extends React.Component {
           <thead>
             <tr>
               <th><input type="checkbox" checked={this.state.masterSelect} onChange={this.changeMasterSelect} /></th>
-              <th>Name</th>
-              <th>Amount</th>
+              <th>שם</th>
+              <th>סכום</th>
             </tr>
           </thead>
           <tbody>
