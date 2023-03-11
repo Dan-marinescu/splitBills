@@ -56,7 +56,6 @@ class Table extends React.Component {
   }
 
   changeMasterSelect = (event) => {
-    console.log(this.props)
     this.setState({ masterSelect: event.target.checked })
     this.setState(prevState => ({
       tempData: prevState.tempData.map((item) => ({
@@ -93,7 +92,7 @@ class Table extends React.Component {
       let dataToSend = this.state.tempData
       console.log(dataToSend)
 
-      axios.post('http://localhost:3500/update', { dataToSend }).then(response => {
+      axios.post('http://localhost:8000/update', { dataToSend }).then(response => {
         // let data = response.data;
       }).catch(err => {
         console.log(err);

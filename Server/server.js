@@ -45,7 +45,6 @@ app.use(function (req, res, next) {
 
 
 app.get('/data', async (req, res) => {
-    console.log("here")
     const objsArray = await Table.getAllData()
     if(!objsArray)
     return res.send([]);
@@ -54,7 +53,6 @@ app.get('/data', async (req, res) => {
 
 app.post('/update',async (req,res)=>{
   Table.update(req.body.dataToSend);
-  // console.log(Table.getAllData().then(data=>{console.log(data)}))
   res.send("ok")
 })
 app.listen(port, async () => {
